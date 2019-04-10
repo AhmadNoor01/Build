@@ -32,13 +32,9 @@ module.exports = ({ mode } = { mode: 'production', presets: [] }) => {
         name: false,
         cacheGroups: {
             vendor: {
-                name: 'vendorss',
+                name: 'vendors',
                 test: /[\\/]node_modules[\\/]/,
-            },
-            common: {
-                name: 'common',
-                test: path.join(__dirname, 'src'),
-            },
+            }
         }
       },
       runtimeChunk: true
@@ -66,14 +62,14 @@ module.exports = ({ mode } = { mode: 'production', presets: [] }) => {
 
         // Style loaders
 
-        {
-          test: /\.scss$/,
-          use: [
-              "style-loader", // creates style nodes from JS strings
-              "css-loader", // translates CSS into CommonJS
-              "sass-loader" // compiles Sass to CSS, using Node Sass by default
-          ]
-        },
+        // {
+        //   test: /\.scss$/,
+        //   use: [
+        //       "style-loader", // creates style nodes from JS strings
+        //       "css-loader", // translates CSS into CommonJS
+        //       "sass-loader" // compiles Sass to CSS, using Node Sass by default
+        //   ]
+        // },
 
         {
           test: /\.(jpe?g|png|gif|svg)$/i,

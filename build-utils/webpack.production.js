@@ -17,12 +17,14 @@ module.exports = () => ({
           {
             test: /\.css$/,
             use: [MiniCssExtractPlugin.loader,
-            {
-              loader: require.resolve( 'css-loader' ), options: {url:false, sourceMap:true}
-              },
-              {
-              loader: 'sass-loader', options: { sourceMap: true }
-            }
+              "css-loader",
+              "sass-loader"
+            // {
+            //   loader: require.resolve( 'css-loader' ), options: {url:false, sourceMap:true}
+            //   },
+            //   {
+            //   loader: 'sass-loader', options: { sourceMap: true }
+            // }
           ]
           }
         ]
@@ -78,7 +80,7 @@ module.exports = () => ({
       //minify css for production
     new MiniCssExtractPlugin({
         //minified filename
-        filename: "style.css",
+        filename: "[name].css",
       }),
     new HtmlWebpackLoader({
         //make html file
