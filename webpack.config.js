@@ -94,6 +94,6 @@ module.exports = ({ mode = "production" , presets= []}) => {
       new CleanWebpackPlugin()
     ]
   }, modeConfig(mode),
-  presetConfig(presets))
+  presets.length && presetConfig(presets))
 
 };
